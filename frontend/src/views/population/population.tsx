@@ -4,11 +4,10 @@ import { backendPublic } from '../../utils/constants/env'
 import { initialState } from '../../utils/mock/graphdata'
 import { Graphs, graphsList } from '../../utils/constants/graphs'
 
-import { IconButton } from '../../elements/buttons/iconbutton/inconbutton'
-import { BasicButton } from '../../elements/buttons/basicbutton/basicbutton'
 import { BarChart, LineChart, PieChart } from '../../components/charts'
 
 import './population.css'
+import { Button } from '../../elements'
 
 export const PopulationView = () => {
     const [selectedGraph, setSelectedGraph] = useState<Graphs>(Graphs.BarGraph)
@@ -31,7 +30,7 @@ export const PopulationView = () => {
             <nav className="population_nav">
                 {graphsList.map((graph, key) => {
                     return (
-                        <IconButton
+                        <Button.Icon  
                             key={key}
                             icon={graph.icon}
                             onClick={() => setSelectedGraph(graph.name)}
@@ -47,11 +46,11 @@ export const PopulationView = () => {
                 )}
             </section>
             <nav className="population_nav">
-                <BasicButton
+                <Button.Basic
                     text="Population 2023"
                     onClick={() => handle2023()}
                 />
-                <BasicButton
+                <Button.Basic
                     text="Population Compare"
                     onClick={() => handleCompare()}
                 />

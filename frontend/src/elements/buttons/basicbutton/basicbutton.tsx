@@ -5,7 +5,7 @@ interface BasicButtonProps {
     onClick: () => void
 }
 
-export const BasicButton = (props: BasicButtonProps) => {
+export const Basic = (props: BasicButtonProps) => {
     const { text, onClick } = props
     return (
         <button className="basicbutton" onClick={onClick}>
